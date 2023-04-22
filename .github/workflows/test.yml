@@ -26,4 +26,4 @@ jobs:
         SOURCE: "./"
         REMOTE_HOST: "ec2-65-0-179-40.ap-south-1.compute.amazonaws.com"
         REMOTE_USER: "ubuntu"
-        TARGET: "/home/ubuntu/var/www/html"
+        TARGET: "/var/www/html"
