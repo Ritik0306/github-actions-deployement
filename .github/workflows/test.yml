@@ -19,5 +19,11 @@ jobs:
        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
        aws-region: ap-south-1
 
-    - name: Deploy website to apache2
-      run: sudo cp ./index.html /var/www/html/index.html
+    - name: Deploy to my EC2 instance
+      uses: easingthemes/ssh-deploy@v2.1.5
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+        SOURCE: "./"
+        REMOTE_HOST: "ec2-65-0-179-40.ap-south-1.compute.amazonaws.com"
+        REMOTE_USER: "ubuntu"
+        TARGET: "/home/ubuntu/var/www/html"
