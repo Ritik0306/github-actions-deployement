@@ -20,4 +20,4 @@ jobs:
        aws-region: ap-south-1
 
     - name: Deploy to my EC2 instance
-      run: sudo cp ./ /var/www/html
+      run: sudo cp -r ./ /var/www/html
