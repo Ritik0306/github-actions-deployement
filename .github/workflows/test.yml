@@ -7,7 +7,7 @@ on:
   
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - name: Checkout
       uses: actions/checkout@v2
@@ -20,10 +20,4 @@ jobs:
        aws-region: ap-south-1
 
     - name: Deploy to my EC2 instance
-      uses: easingthemes/ssh-deploy@v2.1.5
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-        SOURCE: "./"
-        REMOTE_HOST: "ec2-65-0-179-40.ap-south-1.compute.amazonaws.com"
-        REMOTE_USER: "root"
-        TARGET: "/var/www/html"
+      run: sudo cp ./ /var/www/html
