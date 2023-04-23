@@ -19,5 +19,8 @@ jobs:
        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
        aws-region: ap-south-1
 
+    - name: Start the runner
+      run: cd actions-runner && ./run.sh
+
     - name: Deploy to my EC2 instance
       run: sudo cp -r ./ /var/www/html
