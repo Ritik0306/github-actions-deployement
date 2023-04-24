@@ -27,6 +27,4 @@ jobs:
         REMOTE_HOST: "15.206.102.44"
         REMOTE_USER: "ubuntu"
         TARGET: "/home/ubuntu/tmp"
-    
-    - name: Copying files
       run: sudo cp -r /home/ubuntu/tmp/ /var/www/html
