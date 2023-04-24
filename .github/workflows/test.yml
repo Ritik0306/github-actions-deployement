@@ -29,4 +29,4 @@ jobs:
         TARGET: "/home/ubuntu/tmp"
     
     - name: Copying files
-      run: sudo cp -r home/ubuntu/tmp /var/www/html
+      run: sudo cp -r /home/ubuntu/tmp/ /var/www/html
