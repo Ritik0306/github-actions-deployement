@@ -10,7 +10,7 @@ jobs:
       - name: Upload Gatling jar to Github Release
         id: changes
         run: |
-          echo terraform=${pwd} >> $GITHUB_OUTPUT
+          echo terraform=$(pwd) >> $GITHUB_OUTPUT
         
       - name: test
         run: echo "${{ steps.changes.outputs.terraform }}"
