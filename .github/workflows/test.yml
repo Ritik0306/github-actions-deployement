@@ -4,9 +4,15 @@ on:
 jobs:
   Generate-Release-artifacts:
     runs-on: ubuntu-latest
+    outputs:
+      terraform: ${{ steps.changes.outputs.terraform }}
+          
     steps:
-      - name: Set release version
-        id: vars
-        run: echo short_ref=${GITHUB_REF#refs/*/} >> $GITHUB_OUTPUT
       - name: Upload Gatling jar to Github Release
-        run: echo "${{ steps.vars.outputs.short_ref }}"
+        id: changes
+        run: |
+          echo terraform=${GITHUB_REFS#refs/*/} >> $GITHUB_OUTPUT
+        
+      - name: test
+        run: echo "${{ steps.changes.outputs.terraform }}"
+        
