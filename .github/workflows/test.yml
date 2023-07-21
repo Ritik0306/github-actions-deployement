@@ -7,11 +7,10 @@ jobs:
     outputs:
       terraform: ${{ steps.changes.outputs.terraform }}      
     steps:
-      - name: Upload Gatling jar to Github Release
-        id: changes
+      - name: Get JAR version
+        if: github.ref == 'refs/heads/main'
+        id: get_jar_version
         run: |
-          echo terraform=$(pwd) >> $GITHUB_OUTPUT
-        
-      - name: test
-        run: echo "${{ steps.changes.outputs.terraform }}"
-        
+          jar_filename=$(test.jar)
+          version=1.0
+          echo "##[set-output name=jar_version]$version"        
