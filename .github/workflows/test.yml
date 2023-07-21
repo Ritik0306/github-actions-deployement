@@ -12,3 +12,4 @@ jobs:
         run: |
           version=1.0
           echo "::set-output name=jar_version::$version" 
+          echo $jar_version
