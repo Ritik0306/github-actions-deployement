@@ -11,4 +11,4 @@ jobs:
         id: get_jar_version
         run: |
           version=1.0
-          echo "##jar_version=$version" >> $GITHUB_OUTPUT
+          echo "##[jar_version]$version" 
