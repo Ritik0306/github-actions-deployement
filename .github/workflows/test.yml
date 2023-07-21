@@ -9,4 +9,6 @@ jobs:
     steps:
       - name: Get JAR version
         id: get_jar_version
-        run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT        
+        run: |
+          version=1.0
+          echo "[set-output name=jar_version]$version"
