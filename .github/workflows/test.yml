@@ -11,4 +11,4 @@ jobs:
         id: get_jar_version
         run: |
           version=1.0
-          echo "##[set-output name=jar_version]$version" 
+          echo "[set-output name=jar_version]$version" 
