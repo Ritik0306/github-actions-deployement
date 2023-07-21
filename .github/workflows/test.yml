@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: Get JAR version
         id: get_jar_version
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"        
+        run: echo "[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"        
