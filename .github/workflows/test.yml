@@ -12,6 +12,10 @@ jobs:
         run: |
           version=1.0
           echo "jar_version=$version" >> $GITHUB_OUTPUT
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_REF#refs/heads/}"
+        id: extract_branch
       - name: Build jar
         run: |
-          echo "${{ steps.get_jar_version.outputs.jar_version }}" 
+          echo "${{ steps.extract_branch.outputs.branch }}" 
