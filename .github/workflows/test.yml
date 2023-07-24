@@ -12,4 +12,6 @@ jobs:
         run: |
           version=1.0
           echo "jar_version=$version" >> $GITHUB_OUTPUT
-          echo $jar_version
+      - name: Build jar
+        run: |
+          echo "${{ steps.get_jar_version.outputs.jar_version }}" 
