@@ -1,16 +1,10 @@
-name: Release Gatling Enterprise package  
+name: Hello
 on:
   push:
 jobs:
   Generate-Release-artifacts:
     runs-on: ubuntu-latest
-    outputs:
-      terraform: ${{ steps.changes.outputs.terraform }}      
     steps:
-      - name: Extract branch name
-        shell: bash
-        run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
-        id: extract_branch
-      - name: Build jar
-        run: |
-          echo "${{ steps.extract_branch.outputs.branch }}" 
+       - name: print hello world
+         run: |
+          echo "hello world" 
